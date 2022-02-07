@@ -1,0 +1,87 @@
+<app-adminnavbar></app-adminnavbar>
+
+<div class="example-container" fxLayout="column" fxLayoutAlign="center center" (submit)="addFlights()">
+
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Add Flight</mat-card-title>
+    </mat-card-header>
+  
+    <form class="add-flight-form" [formGroup]="addFlightForm">
+      
+  
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Flight Number</mat-label>
+         <input matInput type="text" formControlName="flightNumber">
+      </mat-form-field>
+  
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Airline</mat-label>
+        <input matInput type="text" formControlName="airline">
+      </mat-form-field>
+
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>From</mat-label>
+        <input matInput type="text" formControlName="startingLocation">
+      </mat-form-field>
+
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>To</mat-label>
+        <input matInput type="text" formControlName="destination">
+      </mat-form-field>
+  
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Departure Date</mat-label>
+        <input matInput type="date" formControlName="departureDate">
+      </mat-form-field>
+
+      <!-- <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Departure Time</mat-label>
+        <input matInput type="time" formControlName="departureTime">
+      </mat-form-field> -->
+  
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Return Date</mat-label>
+       <input matInput type="date" formControlName="returnDate">
+      </mat-form-field>
+<!-- 
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Return Date</mat-label>
+        <input matInput type="time" formControlName="returnTime">
+      </mat-form-field> -->
+
+      <mat-form-field  class="flight-entry" appearance="outline">
+        <mat-label>Total  Seats</mat-label>
+        <input matInput type="number" formControlName="totalSeats">
+      </mat-form-field>
+
+      
+
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label>Ticket Cost</mat-label>
+        <input matInput type="number" formControlName="ticketCost">
+      </mat-form-field>
+      <mat-form-field class="flight-entry" appearance="outline">
+        <mat-label  >Meal</mat-label>
+        <mat-select formControlName="meal">
+          <mat-option value="NON_VEG">Non-Veg</mat-option>
+          <mat-option value="VEG">Veg</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <div> <button mat-raised-button color="primary" type="submit" [disabled]="addFlightForm.invalid">Add Flights</button></div>
+     
+      
+  
+      <!-- <mat-form-field appearance="outline"
+          [hideRequiredMarker]="hideRequiredControl.value"
+          [floatLabel]="floatLabelControl.value">
+        <mat-select required>
+          <mat-option>-- None --</mat-option>
+          <mat-option value="option">Option</mat-option>
+        </mat-select>
+        <mat-label><mat-icon>favorite</mat-icon> <b> Fancy</b> <i> label</i></mat-label>
+      </mat-form-field> -->
+    </form>
+  </mat-card>
+  </div>
