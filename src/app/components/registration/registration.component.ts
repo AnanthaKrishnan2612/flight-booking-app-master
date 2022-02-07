@@ -34,6 +34,9 @@ export class RegistrationComponent implements OnInit {
 
      return this.userservice.register(this.user).subscribe((response  :any)=>{
       this.isSuccessful=true;
+      if(this.isSuccessful){
+        alert("User Registration Successful !!! Proceed to login")
+      }
       console.log(this.isSuccessful)
       let route ="/login"
       this.router.navigate([route]);

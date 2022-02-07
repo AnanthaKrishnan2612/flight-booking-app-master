@@ -7,7 +7,7 @@
       </th>
       <th>Action</th>
       <th>Action</th>
-      <th>Action</th>
+      
     </tr>
   
     <tr *ngFor = "let row of flightList">
@@ -42,8 +42,8 @@
         {{row.isBlocked}}
       </td>
       <!-- <td><button class="btn btn-primary" (click) ="updateFlight(row)">Update</button></td> -->
-      <td><button class="btn btn-danger" (click) ="blockFlight(row.flightNumber)">Block</button></td>
-      <td><button class="btn btn-danger" (click) ="unblockFlight(row.flightNumber)">Unblock</button></td>
+      <td><button class="btn btn-danger" (click) ="blockFlight(row.airline)">Block</button></td>
+      <td><button class="btn btn-danger" (click) ="unblockFlight(row.airline)">Unblock</button></td>
       <!-- <td><button class="btn btn-warning" name="blockAirline(value)">Block</button></td> -->
     </tr>
   

@@ -16,18 +16,6 @@ export class FlightService {
 
   
 
-  
-  // authenticateAdmin(credentials : User){
-  //   console.log("Flight-app-log: Authenticating Admin "+credentials.password +"  "+credentials.username)
-  //   return this.httpClient.post(this.authenticateAdminURL, credentials)
-    
-//     .pipe(map(loginResponse ->{
-//       const response = JSON.parse(JSON.stringify(loginResponse))
-//       let token = 'Bearer '+Response.token;
-
-// sessionStorage.setItem('token', token) 
-// return loginResponse;   }));
-  // }
 
 
   private flightServiceURL: string = "http://localhost:8088/airlines/airlines/";
@@ -45,7 +33,7 @@ export class FlightService {
   }
 
   getAllFlights(){
-    return this.httpClient.get(this.flightServiceURL+"allflights",this.httpOptions);
+    return this.httpClient.get(this.flightServiceURL+ "allflights",this.httpOptions);
     // return this.httpClient.get("http://localhost:8000/flightDTO");
     
   }
@@ -57,11 +45,11 @@ export class FlightService {
 
   blockFlight(airline : any)
   {
-    return this.httpClient.put(this.flightServiceURL+"blockflight/"+airline,this.httpOptions); 
+    return this.httpClient.put(this.flightServiceURL+"block/"+airline,this.httpOptions); 
   }
   unblockFlight(airline : any)
   {
-    return this.httpClient.put(this.flightServiceURL+"unblockflight/"+airline,this.httpOptions); 
+    return this.httpClient.put(this.flightServiceURL+"unblock/"+airline,this.httpOptions); 
   }
 
 }

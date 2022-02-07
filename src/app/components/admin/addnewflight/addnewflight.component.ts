@@ -29,6 +29,7 @@ export class AddnewflightComponent implements OnInit {
     "totalSeats": new FormControl("", []),
     "ticketCost": new FormControl("", []),
     "meal" : new FormControl("",[]),
+    "equipment" : new FormControl("",[]),
     
   }); }
 
@@ -49,6 +50,7 @@ export class AddnewflightComponent implements OnInit {
   this.flightDto.returnDate = this.addFlightForm.value.returnDate
   this.flightDto.totalSeats = this.addFlightForm.value.totalSeats
   this.flightDto.ticketCost = this.addFlightForm.value.ticketCost
+  this.flightDto.equipmentUsed= this.addFlightForm.value.equipment
   this.flightDto.meals = this.addFlightForm.value.meal;
   return this.flightService.addnewFlight(this.flightDto).subscribe((res:any) =>{   
     this.flightSaved = res;

@@ -32,7 +32,9 @@ export class ModifyexistingflightComponent implements OnInit {
     console.log(airline)
     this.flightservice.blockFlight(airline).subscribe(data => {
       console.log("Success");
+      
       this.getAllFlights();
+      alert("Blocked all flight for the airline :"+airline)
 
     });
   }
@@ -42,6 +44,7 @@ export class ModifyexistingflightComponent implements OnInit {
       console.log("Success");
       this.getAllFlights();
       this.router.navigate(['/admin/modifyflight']);
+      alert("Blocked all flight for the airline :"+airline)
     });
 
   }
